@@ -4,7 +4,7 @@ class Navigation extends Component {
   
   handleSubmit = e => {
     e.preventDefault();
-    this.props.onSearch(e.target.innerHTML); // works b/c of ref attr in input below.
+    this.props.onSearch(e.target.innerHTML);
   }
 
   render(){

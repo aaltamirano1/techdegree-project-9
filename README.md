@@ -1,6 +1,6 @@
 # React Gallery App
 
-Uses React and Flickr API to display a photo gallery
+Uses React and Flickr API to display a photo gallery.
 
 ## Getting Started
 
@@ -9,8 +9,8 @@ Uses React and Flickr API to display a photo gallery
 3. Add a config.js file in the project src folder with your Flickr keys in the following format:
 ```
 module.exports = {
-  key: '5fc572fb9dcb6696423218ad3bc1186c',
-  secret: '9fd40c0b58cf5279'
+  key: 'Your key here',
+  secret: 'Your secret key here'
 }
 ```
 4. In the console run the "node app.js" command while in the project folder.

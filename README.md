@@ -13,5 +13,5 @@ module.exports = {
   secret: 'Your secret key here'
 }
 ```
-4. In the console run the "node app.js" command while in the project folder.
+4. In the console run the npm start command while in the project folder.
 5. Open "http://localhost:3000/" in your web browser.

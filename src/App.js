@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import {
   BrowserRouter,
-  Route
+  Route,
+  Switch
 } from 'react-router-dom';
 
 import './App.css';
 import Form from './Form';
 import Navigation from './Navigation';
 import Photos from './Photos';
+import NotFound from './NotFound';
 
 import axios from 'axios';
 const keys = require('./config');
@@ -59,10 +61,13 @@ class App extends Component {
         <div className="container">
           <Form onSearch={this.performSearch}/>
           <Navigation onSearch={this.performSearch} />
-          <Route exact path="/" render={ () => <Photos loading={this.state.loading} imgs={this.state.imgs}/>} />
-          <Route path="/cats" render={ () => <Photos loading={this.state.loading} imgs={this.state.cats}/>} />
-          <Route path="/dogs" render={ () => <Photos loading={this.state.loading} imgs={this.state.dogs}/>} />
-          <Route path="/computers" render={ () => <Photos loading={this.state.loading} imgs={this.state.comp}/>} />
+          <Switch>
+            <Route exact path="/" render={ () => <Photos loading={this.state.loading} imgs={this.state.imgs}/>} />
+            <Route path="/cats" render={ () => <Photos loading={this.state.loading} imgs={this.state.cats}/>} />
+            <Route path="/dogs" render={ () => <Photos loading={this.state.loading} imgs={this.state.dogs}/>} />
+            <Route path="/computers" render={ () => <Photos loading={this.state.loading} imgs={this.state.comp}/>} />
+            <Route component={NotFound} />
+          </Switch>
         </div>
       </BrowserRouter>
     );

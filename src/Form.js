@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link, withRouter} from 'react-router-dom';
 
 class Form extends Component {
 	state = {
@@ -13,6 +14,7 @@ class Form extends Component {
     e.preventDefault();
     this.props.onSearch(this.query.value); // works b/c of ref attr in input below.
     e.currentTarget.reset();
+    this.props.history.push('/');
   }
 
 	render(){
@@ -36,4 +38,4 @@ class Form extends Component {
 
 }
 
-export default Form;
+export default withRouter(Form);

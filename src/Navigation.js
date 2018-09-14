@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 class Navigation extends Component { 
   
@@ -11,9 +12,9 @@ class Navigation extends Component {
 	return (
     <nav className="main-nav">
       <ul>
-        <li><a href='#' onClick={this.handleSubmit}>Cats</a></li>
-        <li><a href='#'onClick={this.handleSubmit} >Dogs</a></li>
-        <li><a href='#'onClick={this.handleSubmit}>Computers</a></li>
+        <li><Link to="/cats">Cats</Link></li>
+        <li><Link to="/dogs" >Dogs</Link></li>
+        <li><Link to="/computers">Computers</Link></li>
       </ul>
     </nav>
 	);

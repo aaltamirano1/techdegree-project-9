@@ -28,7 +28,7 @@ class App extends Component {
 
   performSearch = (query = 'coding', selection) => {
     this.setState({loading: true});
-    axios.get(`https://api.flickr.com/services/rest/?format=json&method=flickr.photos.search&api_key=${keys.key}&tags=${query}&nojsoncallback=1&per_page=4`)
+    axios.get(`https://api.flickr.com/services/rest/?format=json&method=flickr.photos.search&api_key=${keys.key}&tags=${query}&nojsoncallback=1&per_page=12`)
     .then(res => {
       switch(selection) {
       case'cats':
@@ -63,6 +63,7 @@ class App extends Component {
           <Navigation onSearch={this.performSearch} />
           <Switch>
             <Route exact path="/" render={ () => <Photos loading={this.state.loading} imgs={this.state.imgs}/>} />
+            <Route path="/search" render={ () => <Photos loading={this.state.loading} imgs={this.state.imgs}/>} />
             <Route path="/cats" render={ () => <Photos loading={this.state.loading} imgs={this.state.cats}/>} />
             <Route path="/dogs" render={ () => <Photos loading={this.state.loading} imgs={this.state.dogs}/>} />
             <Route path="/computers" render={ () => <Photos loading={this.state.loading} imgs={this.state.comp}/>} />

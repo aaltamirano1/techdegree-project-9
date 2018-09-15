@@ -5,7 +5,9 @@ class Navigation extends Component {
   
   handleSubmit = e => {
     e.preventDefault();
+    console.log(this.props.location.pathname);
     this.props.onSearch(e.target.innerHTML);
+
   }
 
   render(){
@@ -15,6 +17,7 @@ class Navigation extends Component {
         <li><Link to="/cats">Cats</Link></li>
         <li><Link to="/dogs" >Dogs</Link></li>
         <li><Link to="/computers">Computers</Link></li>
+        <li><Link to="/search">Search</Link></li>
       </ul>
     </nav>
 	);

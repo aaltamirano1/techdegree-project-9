@@ -44,6 +44,7 @@ class App extends Component {
         this.setState({imgs: res.data.photos.photo});
       }
       this.setState({loading: false});
+      console.log(this.history);
     })
     .catch(err => {
       console.log('Error fetching and parsing data', err);
@@ -59,7 +60,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="container">
-          <Form onSearch={this.performSearch}/>
+          <Route path="/search" render={ () => <Form onSearch={this.performSearch}/>} />
           <Navigation onSearch={this.performSearch} />
           <Switch>
             <Route exact path="/" render={ () => <Photos loading={this.state.loading} imgs={this.state.imgs}/>} />
